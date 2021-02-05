@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".modules.Home.HomeActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="80dp"
+        android:textSize="24sp"
+        android:textColor="@color/logo_green"
+        android:textAlignment="viewStart"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="What would you like to know about CNG?"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:fontFamily="@font/gilroy_medium"
+        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="14dp"
+        android:text="Mahanagar Gas Limited, one of the India's leading Natural Gas Distribution Company"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:animateLayoutChanges="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/home_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homepage"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/about_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/home_img">
+
+                <TextView
+                    android:id="@+id/about_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="About CNG"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@+id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/about_title"
+                    app:layout_constraintStart_toStartOf="@id/about_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_about"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="CNG is a fossible fuel subsitute for other auto fuels. In and around the Mumbai City."
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <fragment
+                    android:id="@+id/about_frag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:name="com.applutions.mgl.modules.About.AboutFragment"
+                    tools:layout="@layout/fragment_about"
+                    app:layout_constraintTop_toBottomOf="@id/subtitle_about"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/station_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/about_card">
+
+                <TextView
+                    android:id="@+id/station_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="Station Locator"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/station_title"
+                    app:layout_constraintStart_toStartOf="@id/station_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_station"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Find the nearest Mahanagar CNG stations to you, using our easy to use Stastion Locator"
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/car_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/station_card">
+
+                <TextView
+                    android:id="@+id/car_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="Car Models"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/car_title"
+                    app:layout_constraintStart_toStartOf="@id/car_title"
+                    />
+<!--                TODO add subtitle-->
+                <TextView
+                    android:id="@+id/subtitle_car"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Find the nearest Mahanagar CNG stations to you, using our easy to use Stastion Locator"
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/savings_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/car_card">
+
+                <TextView
+                    android:id="@+id/savings_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="Savings Calculator"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/savings_title"
+                    app:layout_constraintStart_toStartOf="@id/savings_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_savings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Get to know approximate savings that you can make by means of Mahanagar CNG"
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <fragment
+                    android:id="@+id/savings_frag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:name="com.applutions.mgl.modules.SavingsCalc.SavingsFragment"
+                    tools:layout="@layout/fragment_savings"
+                    app:layout_constraintTop_toBottomOf="@id/subtitle_savings"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/kit_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/savings_card">
+
+                <TextView
+                    android:id="@+id/kit_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="Kit Supplier"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/kit_title"
+                    app:layout_constraintStart_toStartOf="@id/kit_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_kit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Find the nearest Kit Supplier stores for your vehicle, using our easy to use Kit Supplier"
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cylinder_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/kit_card">
+
+                <TextView
+                    android:id="@+id/cylinder_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="Cylinder Testing"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/cylinder_title"
+                    app:layout_constraintStart_toStartOf="@id/cylinder_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_cylinder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Find nearest Cylinder Testing stastions for your vehicle right inside from our App."
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/care_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/cylinder_card">
+
+                <TextView
+                    android:id="@+id/care_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="CNG Care"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/care_title"
+                    app:layout_constraintStart_toStartOf="@id/care_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_care"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Find answers to all your questions on how to deal with CNG, we curated most frequently asked questions."
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/faq_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/top_curved_card"
+                app:layout_constraintTop_toBottomOf="@id/care_card">
+
+                <TextView
+                    android:id="@+id/faq_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black"
+                    android:text="CNG FAQ"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@id/line_1"
+                    android:layout_width="56dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/line1"
+                    app:layout_constraintTop_toBottomOf="@id/faq_title"
+                    app:layout_constraintStart_toStartOf="@id/faq_title"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle_faq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Find answers to all your general questions on CNG, we curated most frequently asked questions."
+                    android:paddingBottom="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

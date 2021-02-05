@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".modules.SavingsCalc.SavingsFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/MyCustomTextAppearance"
+        app:tabMode="auto"
+        app:tabIndicatorColor="@color/logo_green"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/calc_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculator"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/prices_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNG Prices"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calculator_sliders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout">
+
+        <TextView
+            android:id="@+id/price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Price"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/price_slider"/>
+
+        <TextView
+            android:id="@+id/price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/text_green_light"
+            android:textSize="18sp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintEnd_toEndOf="@id/price_slider"
+            app:layout_constraintBaseline_toBaselineOf="@id/price_title"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/price_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:trackColorActive="@color/logo_green"
+            app:trackColorInactive="#332A58F8"
+            app:thumbColor="@color/logo_green"
+            app:layout_constraintTop_toBottomOf="@id/price_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/mileage_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Mileage"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintTop_toBottomOf="@id/price_slider"
+            app:layout_constraintStart_toStartOf="@id/mileage_slider"/>
+
+        <TextView
+            android:id="@+id/mileage_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10Km/l"
+            android:textColor="@color/text_green_light"
+            android:textSize="18sp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintEnd_toEndOf="@id/mileage_slider"
+            app:layout_constraintBaseline_toBaselineOf="@id/mileage_title"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/mileage_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:valueFrom="10"
+            android:valueTo="100"
+            app:trackColorActive="@color/logo_green"
+            app:trackColorInactive="#332A58F8"
+            app:thumbColor="@color/logo_green"
+            app:layout_constraintTop_toBottomOf="@id/mileage_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/daily_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Running"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintTop_toBottomOf="@id/mileage_slider"
+            app:layout_constraintStart_toStartOf="@id/daily_slider"/>
+
+        <TextView
+            android:id="@+id/daily_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10Km/l"
+            android:textColor="@color/text_green_light"
+            android:textSize="18sp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintEnd_toEndOf="@id/daily_slider"
+            app:layout_constraintBaseline_toBaselineOf="@id/daily_title"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/daily_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:valueFrom="10"
+            android:valueTo="100"
+            app:trackColorActive="@color/logo_green"
+            app:trackColorInactive="#332A58F8"
+            app:thumbColor="@color/logo_green"
+            app:layout_constraintTop_toBottomOf="@id/daily_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:paddingHorizontal="33dp"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/daily_slider">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reset"
+                android:textColor="@color/logo_green"
+                android:fontFamily="@font/gilroy_bold"
+                android:textAllCaps="false"
+                android:foreground="?attr/selectableItemBackground"
+                android:background="@drawable/alt_button_bg"
+                android:layout_marginEnd="12dp"/>
+
+            <Button
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Calculate"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gilroy_bold"
+                android:background="@drawable/main_button_bg"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_marginStart="12dp"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cng_prices_grp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout">
+
+        <LinearLayout
+            android:id="@+id/pricing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingHorizontal="33dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:text="@string/rupee"
+                android:fontFamily="@font/gilroy_bold" />
+            <TextView
+                android:id="@+id/cng_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:letterSpacing="0.06"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="47.9/kg"
+                />
+            <ImageView
+                android:id="@+id/prices_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profit"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/logo_green"
+                android:textSize="14sp"
+                android:fontFamily="@font/gilroy_bold"
+                android:layout_marginStart="6dp"
+                android:text="10.89(1.57%)"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_medium"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="8dp"
+            android:text="Mumbai Price(as on Jan 22,2021)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pricing"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

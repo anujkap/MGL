@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".modules.Auth.LoginFragment">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/company_logo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        app:hintEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_mobile_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:textSize="14sp"
+            android:fontFamily="@font/gilroy_medium"
+            android:hint="Mobile Number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_sign_up"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/inactive_button_bg"
+        android:fontFamily="@font/gilroy_bold"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Signup"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="@+id/mobile_layout"
+        app:layout_constraintStart_toStartOf="@+id/mobile_layout"
+        app:layout_constraintTop_toBottomOf="@+id/mobile_layout" />
+
+    <TextView
+        android:id="@+id/login_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="Already have an account? Login"
+        android:textColor="@color/logo_green"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/button_sign_up"
+        app:layout_constraintEnd_toEndOf="@id/button_sign_up"
+        app:layout_constraintTop_toBottomOf="@id/button_sign_up" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
